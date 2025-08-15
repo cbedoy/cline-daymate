@@ -13,3 +13,10 @@ export const createCard = ({ id = Date.now(), name, dueDateDay, dueDateMonth, pa
     }
     return { id, name, dueDateDay, dueDateMonth, paymentDateDay, paymentDateMonth, debt, color };
 };
+
+export const createPayment = ({ id = Date.now(), name, paymentDay, paymentMonth, amount }) => {
+    if (!name || !paymentDay || !paymentMonth || typeof amount !== 'number') {
+        throw new Error('Invalid payment data');
+    }
+    return { id, name, paymentDay, paymentMonth, amount };
+};

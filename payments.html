@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-Mate - Pagos Adicionales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/ui/theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
+</head>
+<body id="payments-page">
+    <div class="container">
+        <header>
+            <h1>Day-Mate</h1>
+            <nav class="navigation">
+                <a href="index.html">Cuentas</a>
+                <a href="cards.html">Tarjetas</a>
+                <a href="payments.html" class="active">Pagos Adicionales</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="card-container">
+                <h2>Agregar/Modificar Pago</h2>
+                <form id="payment-form">
+                    <input type="hidden" id="payment-id">
+                    <div class="form-group">
+                        <label for="payment-name">Nombre del Pago</label>
+                        <input type="text" id="payment-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Pago</label>
+                        <div class="date-selector">
+                            <select id="payment-day" required></select>
+                            <select id="payment-month" required></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Monto</label>
+                        <input type="number" id="amount" required>
+                    </div>
+                    <button type="submit" class="btn">Guardar</button>
+                </form>
+            </div>
+
+            <div class="card-container">
+                <h2>Pagos Guardados</h2>
+                <div id="payments-list"></div>
+            </div>
+
+            <div class="card-container">
+                <h2>Calendario de Pagos</h2>
+                <div id="calendar"></div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+    <script type="module" src="src/app/main.js"></script>
+</body>
+</html>
