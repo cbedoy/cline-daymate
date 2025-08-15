@@ -3,64 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day-Mate - Mis Tarjetas</title>
+    <title data-i18n="day_mate">Day-Mate</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/ui/theme.css">
-    <link rel="stylesheet" href="https/cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
 </head>
 <body id="cards-page">
     <div class="container">
         <header>
-            <h1>Day-Mate</h1>
+            <h1 data-i18n="day_mate">Day-Mate</h1>
+            <div class="header-controls">
+                <select id="language-switcher">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
             <nav class="navigation">
-                <a href="index.html">Cuentas</a>
-                <a href="cards.html" class="active">Tarjetas</a>
-                <a href="payments.html">Pagos Adicionales</a>
+                <a href="index.html" data-i18n="accounts">Cuentas</a>
+                <a href="cards.html" class="active" data-i18n="cards">Tarjetas</a>
+                <a href="payments.html" data-i18n="additional_payments">Pagos Adicionales</a>
             </nav>
         </header>
 
         <main>
             <div class="card-container">
-                <h2>Agregar/Modificar Tarjeta</h2>
+                <h2 data-i18n="add_edit_card">Agregar/Modificar Tarjeta</h2>
                 <form id="card-form">
                     <input type="hidden" id="card-id">
                     <div class="form-group">
-                        <label for="card-name">Nombre de la Tarjeta</label>
+                        <label for="card-name" data-i18n="card_name">Nombre de la Tarjeta</label>
                         <input type="text" id="card-name" required>
                     </div>
                     <div class="form-group">
-                        <label>Fecha de Corte</label>
+                        <label data-i18n="due_date">Fecha de Corte</label>
                         <div class="date-selector">
                             <select id="due-date-day" required></select>
                             <select id="due-date-month" required></select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Fecha Límite de Pago</label>
+                        <label data-i18n="payment_date">Fecha Límite de Pago</label>
                         <div class="date-selector">
                             <select id="payment-date-day" required></select>
                             <select id="payment-date-month" required></select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="debt">Monto de Deuda</label>
+                        <label for="debt" data-i18n="debt_amount">Monto de Deuda</label>
                         <input type="number" id="debt" required>
                     </div>
                     <div class="form-group">
-                        <label for="card-color">Color</label>
+                        <label for="card-color" data-i18n="color">Color</label>
                         <input type="color" id="card-color" value="#6200EE">
                     </div>
-                    <button type="submit" class="btn">Guardar</button>
+                    <button type="submit" class="btn" data-i18n="save">Guardar</button>
                 </form>
             </div>
 
             <div class="card-container">
-                <h2>Tarjetas Guardadas</h2>
+                <h2 data-i18n="saved_cards">Tarjetas Guardadas</h2>
                 <div id="cards-list"></div>
             </div>
 
             <div class="card-container">
-                <h2>Calendario de Pagos</h2>
+                <h2 data-i18n="payment_calendar">Calendario de Pagos</h2>
                 <div id="calendar"></div>
             </div>
         </main>

@@ -94,3 +94,14 @@ h1, h2 {
 .navigation a.active {
     border-bottom: 2px solid var(--primary-color);
 }
+
+.header-controls {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#language-switcher {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
